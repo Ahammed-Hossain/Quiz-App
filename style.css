@@ -1,0 +1,207 @@
+/* ---------------- Reset & Body ---------------- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #d9f0ff, #eafaf1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+/* ---------------- Page Title ---------------- */
+h1 {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 18px;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+/* ---------------- Quiz Container ---------------- */
+.container {
+  background: #ffffff;
+  padding: 28px 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 850px;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;  /* main gap compact */
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------------- First <p> - Question Counter ---------------- */
+.container p:first-of-type {
+  font-size: 1.4rem;   
+  font-weight: 700;    
+  color: #1e293b;
+  margin-bottom: 2px;  /* gap compact */
+}
+
+/* ---------------- Other <p> - Questions / Demo ---------------- */
+.container p:not(:first-of-type) {
+  font-size: 1.2rem;   
+  font-weight: 500;    
+  color: #0f172a;
+  margin-bottom: 2px;  /* gap compact */
+}
+
+/* ---------------- Options ---------------- */
+label {
+  display: flex;
+  align-items: center;
+  gap: 20px;           /* checkbox & text gap increased */
+  padding: 12px 15px;  /* padding slightly bigger */
+  border: 1px solid #cbd5e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+label:hover {
+  background: #e6f4ea;
+  border-color: #38a169;
+}
+
+/* ---------------- Checkbox (Round) ---------------- */
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #38a169;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  background-color: #38a169;
+  box-shadow: inset 0 0 0 5px white;
+}
+
+/* ---------------- Next Button ---------------- */
+.next {
+  background: #38a169;
+  color: white;
+  padding: 8px 25px;   
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 12px;  /* gap between options and button */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.next:hover {
+  background: #2f855a;
+  transform: scale(1.05);
+}
+
+/* ---------------- Responsive Redesign ---------------- */
+
+/* 1024px & below (tablets) */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 90%;
+    padding: 22px 25px;
+  }
+  h1 {
+    font-size: 2.4rem;
+  }
+  .container p:first-of-type {
+    font-size: 1.3rem;
+  }
+  .container p:not(:first-of-type) {
+    font-size: 1.15rem;
+  }
+  label {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    gap: 18px;  /* slightly smaller for tablet */
+  }
+  .next {
+    padding: 7px 22px;
+    font-size: 0.95rem;
+    margin-top: 10px;
+  }
+}
+
+/* 800px & below */
+@media screen and (max-width: 800px) {
+  .container {
+    width: 95%;
+    padding: 20px 18px;
+    gap: 6px;
+  }
+}
+
+/* 480px & below — mobile redesign */
+@media screen and (max-width: 480px) {
+  body {
+    padding-top: 18px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 12px 12px;
+    gap: 4px;
+    border-radius: 12px;
+  }
+
+  /* First <p> - still big & bold */
+  .container p:first-of-type {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1px;
+  }
+
+  /* Other two <p> - normal font */
+  .container p:not(:first-of-type) {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1px;
+  }
+
+  label {
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    gap: 16px;  /* mobile option gap increased */
+    border-radius: 10px;
+  }
+
+  .checkbox {
+    width: 16px;
+    height: 16px;
+  }
+
+  .next {
+    padding: 5px 18px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+}
+
